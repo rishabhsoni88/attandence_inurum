@@ -1,3 +1,4 @@
+import 'package:attandenceapp/utils/appextensions.dart';
 import 'package:attandenceapp/widgets/leaveRecordCard.dart';
 import 'package:attandenceapp/appTheme/appColors.dart';
 import 'package:attandenceapp/appTheme/appTextTheme.dart';
@@ -140,16 +141,12 @@ class _LeavePageState extends State<LeavePage> {
                                         MediaQuery.of(context).size.height / 55,
                                     color: dullBlackColor),
                               ),
-                              SizedBox(
-                                height: MediaQuery.of(context).size.height / 85,
-                              ),
+                              15.kh,
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width /
-                                        3.25,
+                                  Expanded(
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           padding: EdgeInsets.symmetric(
@@ -173,9 +170,8 @@ class _LeavePageState extends State<LeavePage> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width /
-                                        3.25,
+                                  10.kw,
+                                  Expanded(
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           padding: EdgeInsets.symmetric(
@@ -201,9 +197,7 @@ class _LeavePageState extends State<LeavePage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(
-                                height: MediaQuery.of(context).size.height / 75,
-                              ),
+                              10.kh,
                               Text(
                                 "Leave Type:",
                                 style: mediumTextBold.copyWith(
@@ -212,9 +206,7 @@ class _LeavePageState extends State<LeavePage> {
                                         MediaQuery.of(context).size.height / 55,
                                     color: dullBlackColor),
                               ),
-                              SizedBox(
-                                height: MediaQuery.of(context).size.height / 75,
-                              ),
+                             10.kh,
                               Obx(() => DropdownButton2<String>(
                                     underline: SizedBox(),
                                     // autofocus: false,
@@ -283,9 +275,7 @@ class _LeavePageState extends State<LeavePage> {
                                       ),
                                     ),
                                   )),
-                              SizedBox(
-                                height: MediaQuery.of(context).size.height / 75,
-                              ),
+                              10.kh,
                               TextField(
                                 decoration: InputDecoration(
                                   label: Text(
@@ -323,64 +313,58 @@ class _LeavePageState extends State<LeavePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    LeaveCards(
-                        headerColor: leaveBalance,
-                        headerTextColor: headerTextColor,
-                        cardIcon: Icons.event_available,
-                        cardTitle: "Leave Balance",
-                        cardBody: "20"),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 90,
+                    Expanded(
+                      child: LeaveCards(
+                          headerColor: leaveBalance,
+                          headerTextColor: headerTextColor,
+                          cardIcon: Icons.event_available,
+                          cardTitle: "Leave Balance",
+                          cardBody: "20"),
                     ),
-                    LeaveCards(
-                        headerColor: leaveApproved,
-                        headerTextColor: headerTextColor,
-                        cardIcon: Icons.event_available,
-                        cardTitle: "Leave Approved",
-                        cardBody: "2"),
+                    5.kw,
+                    Expanded(
+                      child: LeaveCards(
+                          headerColor: leaveApproved,
+                          headerTextColor: headerTextColor,
+                          cardIcon: Icons.event_available,
+                          cardTitle: "Leave Approved",
+                          cardBody: "2"),
+                    ),
                   ],
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 90,
-                ),
+                10.kh,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    LeaveCards(
-                        headerColor: leavePending,
-                        headerTextColor: headerTextColor,
-                        cardIcon: Icons.event_available,
-                        cardTitle: "Leave Pending",
-                        cardBody: "4"),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 90,
+                    Expanded(
+                      child: LeaveCards(
+                          headerColor: leavePending,
+                          headerTextColor: headerTextColor,
+                          cardIcon: Icons.event_available,
+                          cardTitle: "Leave Pending",
+                          cardBody: "4"),
                     ),
-                    LeaveCards(
-                        headerColor: leaveCancelled,
-                        headerTextColor: headerTextColor,
-                        cardIcon: Icons.event_available,
-                        cardTitle: "Leave Cancelled",
-                        cardBody: "10")
+                    5.kw,
+                    Expanded(
+                      child: LeaveCards(
+                          headerColor: leaveCancelled,
+                          headerTextColor: headerTextColor,
+                          cardIcon: Icons.event_available,
+                          cardTitle: "Leave Cancelled",
+                          cardBody: "10"),
+                    )
                   ],
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 50,
-                ),
+                25.kh,
                 Text(
                   "Leave Record",
                   style: mediumTextBold.copyWith(color: cardBodyTextColor),
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 90,
-                ),
+                10.kh,
                 LeaveRecordCard(),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 90,
-                ),
+                10.kh,
                 LeaveRecordCard(),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 90,
-                ),
+                10.kh,
                 LeaveRecordCard(),
               ],
             ),

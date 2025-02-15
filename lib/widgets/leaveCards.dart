@@ -1,5 +1,6 @@
 import 'package:attandenceapp/appTheme/appColors.dart';
 import 'package:attandenceapp/appTheme/appTextTheme.dart';
+import 'package:attandenceapp/utils/appextensions.dart';
 import 'package:flutter/material.dart';
 
 class LeaveCards extends StatefulWidget {
@@ -25,8 +26,8 @@ class _SquareCardsState extends State<LeaveCards> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height/9,
-      width: MediaQuery.of(context).size.width/2.25,
+      // height: MediaQuery.of(context).size.height/9,
+      // width: MediaQuery.of(context).size.width/2.25,
       decoration: BoxDecoration(
         boxShadow: [BoxShadow(
           color: Colors.grey,
@@ -47,7 +48,7 @@ class _SquareCardsState extends State<LeaveCards> {
                     topRight: Radius.circular(10))),
             padding: EdgeInsets.all(7),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   padding: EdgeInsets.all(MediaQuery.of(context).size.width/80),
@@ -61,12 +62,10 @@ class _SquareCardsState extends State<LeaveCards> {
                     size: 20,
                   ),
                 ),
-                SizedBox(
-                  width: 5,
-                ),
+                10.kw,
                 Text(
                   widget.cardTitle,
-                  style: mediumTextBold.copyWith(fontSize: MediaQuery.of(context).size.height/60,color: widget.headerTextColor),
+                  style: mediumTextBold.copyWith(fontSize: 13,color: widget.headerTextColor),
                 )
               ],
             ),

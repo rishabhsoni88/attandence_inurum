@@ -1,6 +1,8 @@
 import 'package:attandenceapp/data/attendance_response.dart';
+import 'package:attandenceapp/data/forget_response.dart';
 import 'package:attandenceapp/data/holiday_response.dart';
 import 'package:attandenceapp/data/login_response.dart';
+import 'package:attandenceapp/data/user_data_response.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -30,11 +32,22 @@ abstract class ApiClient {
   @GET("attendance?userId=7&date=2025-02-10")
   Future<AttendanceResponse> attandenceData();
 
-  @POST("users/login")
+  @POST("auth/login")
   Future<LoginResponse> userLogin(
     // @Part(name: 'identity') String identity,
     // @Part(name: 'password') String password,
-      @Body() Map<String, dynamic> requestBody,
+    @Body() Map<String, dynamic> requestBody,
   );
 
+  @POST("users/forget_passwrd")
+  Future<ForgetResponse> forgetPassword(
+    // @Part(name: 'identity') String identity,
+    // @Part(name: 'password') String password,
+    @Body() Map<String, dynamic> requestBody,
+  );
+
+  @GET("users/{Id}")
+  Future<UserDataResponse> userData(
+    @Path('Id') int? userId,
+  );
 }

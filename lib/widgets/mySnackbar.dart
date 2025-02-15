@@ -1,3 +1,4 @@
+import 'package:attandenceapp/appTheme/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -5,15 +6,14 @@ void showSnackbar(String title, String message, {Icon? icon}) {
   Get.snackbar(
     title,
     message,
-    icon: const Icon(Icons.person),
     snackPosition: SnackPosition.BOTTOM,
-    // backgroundColor: customerNameBlackColor,
+    backgroundColor: themeColor,
     borderRadius: 20,
     margin: const EdgeInsets.all(15),
-    // colorText: whiteColor,
-    duration: const Duration(seconds: 2),
+    colorText: scaffoldColor,
+    duration: const Duration(seconds: 10),
     isDismissible: true,
-    // dismissDirection: SnackDismissDirection.HORIZONTAL,
+    dismissDirection: DismissDirection.horizontal,
     forwardAnimationCurve: Curves.easeOutBack,
   );
 }

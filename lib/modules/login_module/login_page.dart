@@ -10,7 +10,9 @@ import '../../routes/appPages.dart';
 
 class Login extends GetView<LoginController> {
   Login({super.key});
+
   final LoginController controller = Get.put(LoginController());
+
   @override
   Widget build(BuildContext context) {
     // var horizontalPadding = MediaQuery.of(context).size.width / 15;
@@ -25,12 +27,22 @@ class Login extends GetView<LoginController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(
-                      vertical: 50, horizontal: double.infinity),
+                  padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 1),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text("App Logo"),
+                    color: scaffoldColor,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: boxShadowColor,
+                          blurRadius: 1
+                        )
+                      ]),
+                  child: Image.asset(
+                    "assets/images/loginPageImage.jpg",
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 40,
@@ -91,7 +103,7 @@ class Login extends GetView<LoginController> {
                 Column(
                   children: [
                     GestureDetector(
-                      onTap: () async{
+                      onTap: () async {
                         await controller.verifyAndLogin();
                         // Get.toNamed(Routes.BOTTOMNAVIGATION, arguments: "");
                       },
@@ -147,39 +159,14 @@ class Login extends GetView<LoginController> {
                       height: MediaQuery.of(context).size.height / 40,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(Routes.FORGET, arguments: "");
+                      },
                       child: Text("Forget Password",
                           style: smallTextRegular.copyWith(
                               color: themeColor,
                               fontSize: MediaQuery.of(context).size.height / 55,
                               fontWeight: FontWeight.w700)),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 80,
-                    ),
-                    RichText(
-                      text: TextSpan(
-                          style: Theme.of(context).textTheme.bodySmall,
-                          children: <InlineSpan>[
-                            TextSpan(
-                              text: 'Don\'t have an account? ',
-                            ),
-                            TextSpan(
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    print("Sign up button clicked");
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(builder: (context) => sign_up()),
-                                    // );
-                                  },
-                                text: 'Sign Up',
-                                style: smallTextRegular.copyWith(
-                                    color: themeColor,
-                                    fontSize:
-                                        MediaQuery.of(context).size.height / 70,
-                                    fontWeight: FontWeight.w700))
-                          ]),
                     ),
                   ],
                 )

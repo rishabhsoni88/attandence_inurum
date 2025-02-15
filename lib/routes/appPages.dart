@@ -1,6 +1,8 @@
 import 'package:attandenceapp/bottomNavigation.dart';
 import 'package:attandenceapp/modules/dashboard_module/dashboard_bindings.dart';
 import 'package:attandenceapp/modules/dashboard_module/dashboard_page.dart';
+import 'package:attandenceapp/modules/forget_module/forget_bindings.dart';
+import 'package:attandenceapp/modules/forget_module/forget_page.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_bindings.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_controller.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_page.dart';
@@ -35,6 +37,11 @@ abstract class AppPages {
       name: Routes.LOGIN,
       page: () => Login(),
       binding: LoginBindings(),
+    ),
+    GetPage(
+      name: Routes.FORGET,
+      page: () => ForgetPage(),
+      binding: ForgetBindings(),
     ),
     GetPage(
       name: Routes.BOTTOMNAVIGATION,

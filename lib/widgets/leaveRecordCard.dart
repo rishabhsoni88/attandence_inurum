@@ -1,5 +1,6 @@
 import 'package:attandenceapp/appTheme/appColors.dart';
 import 'package:attandenceapp/appTheme/appTextTheme.dart';
+import 'package:attandenceapp/utils/appextensions.dart';
 import 'package:flutter/material.dart';
 
 class LeaveRecordCard extends StatefulWidget {
@@ -34,15 +35,13 @@ class _LeaveRecordCardState extends State<LeaveRecordCard> {
                   Text("Date",
                       style: mediumTextBold.copyWith(
                           fontWeight: FontWeight.w600,
-                          fontSize: MediaQuery.of(context).size.height / 55,
+                          fontSize: 15,
                           color: cardBodyTextColor)),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 97,
-                  ),
+                  3.kh,
                   Text("Apr 15, 2023 - Apr 18, 2023",
                       style: smallTextRegular.copyWith(
                           fontWeight: FontWeight.w600,
-                          fontSize: MediaQuery.of(context).size.height / 55,
+                          fontSize: 13,
                           color: cardDescriptionTextColor)),
                 ],
               ),
@@ -64,17 +63,13 @@ class _LeaveRecordCardState extends State<LeaveRecordCard> {
               )
             ],
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 90,
-          ),
+          10.kh,
           Divider(
             color: boxShadowColor,
             thickness: 0.5,
             height: 0.5,
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 90,
-          ),
+          10.kh,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,18 +79,16 @@ class _LeaveRecordCardState extends State<LeaveRecordCard> {
                 children: [
                   Text("Apply Days",style: mediumTextBold.copyWith(
                       fontWeight: FontWeight.w500,
-              fontSize: MediaQuery.of(context).size.height / 55,
+              fontSize: 13,
               color: dullBlackColor)),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width/99,
-                  ),
+                  5.kh,
                   Text("3 Days",style: smallTextRegular.copyWith(
-                      fontSize: MediaQuery.of(context).size.height / 65,
+                      fontSize: 13,
                       color: cardDescriptionTextColor)),
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height/20,
+                height: 50,
                 child: VerticalDivider(
                   color: boxShadowColor,
                   thickness: 1,
@@ -106,18 +99,16 @@ class _LeaveRecordCardState extends State<LeaveRecordCard> {
                 children: [
                   Text("Leave Balance",style: mediumTextBold.copyWith(
                       fontWeight: FontWeight.w500,
-                  fontSize: MediaQuery.of(context).size.height / 55,
+                  fontSize: 13,
                   color: cardBodyTextColor)),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width/99,
-                  ),
+                  5.kh,
                   Text("16",style: smallTextRegular.copyWith(
-                      fontSize: MediaQuery.of(context).size.height / 65,
+                      fontSize: 13,
                       color: cardDescriptionTextColor)),
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height/20,
+                height: 50,
                 child: VerticalDivider(
                   color: boxShadowColor,
                   thickness: 1,
@@ -128,13 +119,11 @@ class _LeaveRecordCardState extends State<LeaveRecordCard> {
                 children: [
                   Text("Approved By",style: mediumTextBold.copyWith(
                     fontWeight: FontWeight.w500,
-                  fontSize: MediaQuery.of(context).size.height / 55,
+                  fontSize: 13,
                   color: cardBodyTextColor)),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width/99,
-                  ),
+                  5.kh,
                   Text("Martine Deo",style: smallTextRegular.copyWith(
-                      fontSize: MediaQuery.of(context).size.height / 65,
+                      fontSize: 13,
                       color: cardDescriptionTextColor)),
                 ],
               )

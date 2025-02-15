@@ -1,6 +1,6 @@
 import 'package:attandenceapp/networking/api_client.dart';
 import 'package:attandenceapp/routes/appPages.dart';
-import 'package:attandenceapp/utils/myService.dart';
+import 'package:attandenceapp/utils/shared_preference_helper.dart';
 import 'package:attandenceapp/widgets/mySnackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -41,7 +41,12 @@ class LoginController extends GetxController {
       if (value.success == true) {
         print("Login Successful : ${value.message}");
         showLoader.value = false;
-        Get.toNamed(Routes.DASHBOARDPAGE);
+        if (value.data?.userId != null) {
+          await SharedPrefsHelper.saveUserId(value.data!.userId!);
+        } else {
+          print("Error: User ID is null");
+        }
+        Get.toNamed(Routes.BOTTOMNAVIGATION);
       }
       else{
         showLoader.value = false;
@@ -59,10 +64,3 @@ class LoginController extends GetxController {
     showPassword.value = !showPassword.value;
   }
 }
-
-// myService.userName.value =
-//     (value.data?.firstName != null || value.data?.lastName != null)
-//         ? "${value.data?.firstName ?? ""} ${value.data?.lastName ?? ""}"
-//             .trim()
-//         : "Not Available";
-// myService.userEmail.value = value.data?.email ?? "Not Available";

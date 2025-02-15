@@ -26,7 +26,6 @@ class _SquareCardsState extends State<SquareCards> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 2.20,
       decoration: BoxDecoration(
         boxShadow: [BoxShadow(
           color: Colors.grey,

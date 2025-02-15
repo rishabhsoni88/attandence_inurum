@@ -23,15 +23,17 @@ Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
     };
 
 LoginData _$LoginDataFromJson(Map<String, dynamic> json) => LoginData(
-      firstName: json['first_name'] as String?,
-      lastName: json['last_name'] as String?,
+      userId: (json['userId'] as num?)?.toInt(),
+      firstName: json['firstName'] as String?,
+      lastName: json['lastName'] as String?,
       email: json['email'] as String?,
       token: json['token'] as String?,
     );
 
 Map<String, dynamic> _$LoginDataToJson(LoginData instance) => <String, dynamic>{
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
+      'userId': instance.userId,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
       'email': instance.email,
       'token': instance.token,
     };

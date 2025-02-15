@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
 extension DateTimeExtension on String? {
@@ -28,4 +29,16 @@ extension TimestampExtension on int? {
       return ""; // Return empty string if conversion fails
     }
   }
+}
+
+extension IntExtension on dynamic {
+  int validate({dynamic value = 0.0}) {
+    return this ?? value;
+  }
+  Widget get kh => SizedBox(
+    height: this?.toDouble(),
+  );
+  Widget get kw => SizedBox(
+    width: this?.toDouble(),
+  );
 }
