@@ -1,6 +1,6 @@
 import 'package:attandenceapp/appTheme/appColors.dart';
 import 'package:attandenceapp/appTheme/appTextTheme.dart';
-import 'package:attandenceapp/profile_module/profile_controller.dart';
+import 'package:attandenceapp/modules/profile_module/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

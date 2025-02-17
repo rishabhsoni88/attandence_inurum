@@ -4,14 +4,13 @@ import 'package:attandenceapp/modules/dashboard_module/dashboard_page.dart';
 import 'package:attandenceapp/modules/forget_module/forget_bindings.dart';
 import 'package:attandenceapp/modules/forget_module/forget_page.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_bindings.dart';
-import 'package:attandenceapp/modules/holiday_module/holiday_controller.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_page.dart';
 import 'package:attandenceapp/modules/leave_module/leave_bindings.dart';
 import 'package:attandenceapp/modules/leave_module/leave_page.dart';
 import 'package:attandenceapp/modules/login_module/login_bindings.dart';
 import 'package:attandenceapp/modules/login_module/login_page.dart';
-import 'package:attandenceapp/profile_module/profile_bindings.dart';
-import 'package:attandenceapp/profile_module/profile_page.dart';
+import 'package:attandenceapp/modules/profile_module/profile_bindings.dart';
+import 'package:attandenceapp/modules/profile_module/profile_page.dart';
 import 'package:get/get.dart';
 
 part './appRoutes.dart';

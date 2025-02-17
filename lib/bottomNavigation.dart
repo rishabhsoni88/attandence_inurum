@@ -1,7 +1,7 @@
 import 'package:attandenceapp/modules/dashboard_module/dashboard_page.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_page.dart';
 import 'package:attandenceapp/modules/leave_module/leave_page.dart';
-import 'package:attandenceapp/profile_module/profile_page.dart';
+import 'package:attandenceapp/modules/profile_module/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
