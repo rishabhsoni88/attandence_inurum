@@ -20,7 +20,15 @@ const Color mainButtonTextColor = Colors.white;
 const Color titleTextColor = Colors.blue;
 const Color textFieldTextColor = Colors.black;
 
-
+const LinearGradient holidayCard = LinearGradient(
+  begin: Alignment.bottomCenter,
+  end: Alignment.topCenter,
+  colors: [
+    Color(0xff738a8f), // White color
+    themeColor, // Blue color
+    themeColor, // Blue color
+  ],
+);
 const LinearGradient leaveBalance = LinearGradient(
   colors: [
     Color(0xff000000), // White color

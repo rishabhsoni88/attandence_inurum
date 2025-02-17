@@ -48,27 +48,20 @@ class ProfilePage extends GetView<ProfileController> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(50),
-                        child: controller.userDetails.value.data?.userProfileImg != null
-                            ? Image.network(
+                        child: Image.network(
                           controller.userDetails.value.data!.userProfileImg!,
-                          height: 20,
-                          width: 20,
+                          height: 85,
+                          width: 85,
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
                             return Image.asset(
                               "assets/images/person.jpg",
-                              height: 70,
-                              width: 70,
+                              height: 85,
+                              width: 85,
                               fit: BoxFit.cover,
                             );
                           },
                         )
-                            : Image.asset(
-                          "assets/images/person.jpg",
-                          height: MediaQuery.of(context).size.height / 12,
-                          width: MediaQuery.of(context).size.width / 5.5,
-                          fit: BoxFit.cover,
-                        ),
                       ),
                     ),
                     SizedBox(

@@ -5,6 +5,8 @@ import 'package:attandenceapp/modules/forget_module/forget_bindings.dart';
 import 'package:attandenceapp/modules/forget_module/forget_page.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_bindings.dart';
 import 'package:attandenceapp/modules/holiday_module/holiday_page.dart';
+import 'package:attandenceapp/modules/leave_application_module/leave_application_binding.dart';
+import 'package:attandenceapp/modules/leave_application_module/leave_application_page.dart';
 import 'package:attandenceapp/modules/leave_module/leave_bindings.dart';
 import 'package:attandenceapp/modules/leave_module/leave_page.dart';
 import 'package:attandenceapp/modules/login_module/login_bindings.dart';
@@ -31,6 +33,11 @@ abstract class AppPages {
       name: Routes.LEAVEPAGE,
       page: () => LeavePage(),
       binding: LeaveBindings(),
+    ),
+    GetPage(
+      name: Routes.LEAVEAPPLICATIONPAGE,
+      page: () => LeaveApplication(),
+      binding: LeaveApplicationBinding(),
     ),
     GetPage(
       name: Routes.LOGIN,

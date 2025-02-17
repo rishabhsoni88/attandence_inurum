@@ -46,6 +46,13 @@ class LoginController extends GetxController {
         } else {
           print("Error: User ID is null");
         }
+        // Save Token if it exists
+        if (value.data?.token != null) {
+          await SharedPrefsHelper.saveAuthToken(value.data!.token!);
+          print("Auth Token Saved: ${value.data!.token!}");
+        } else {
+          print("Error: Token is null");
+        }
         Get.toNamed(Routes.BOTTOMNAVIGATION);
       }
       else{

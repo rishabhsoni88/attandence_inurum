@@ -1,5 +1,6 @@
 import 'package:attandenceapp/appTheme/appColors.dart';
 import 'package:attandenceapp/appTheme/appTextTheme.dart';
+import 'package:attandenceapp/utils/appextensions.dart';
 import 'package:flutter/material.dart';
 
 class ActivityChip extends StatelessWidget {
@@ -19,31 +20,14 @@ class ActivityChip extends StatelessWidget {
         color: scaffoldColor,
       ),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.only(top: 10,bottom: 10,left: 5,right: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                Container(
-                  padding: EdgeInsets.all(9),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: themeColor,
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.arrow_right_alt_rounded,
-                        color: scaffoldColor,
-                        size: 20,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
+                Image.asset("assets/images/right_arrow.png",height: 50,width: 50,),
+                5.kw,
                 Column(
                   crossAxisAlignment:
                   CrossAxisAlignment.start,

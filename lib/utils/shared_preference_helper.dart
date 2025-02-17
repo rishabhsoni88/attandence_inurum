@@ -25,6 +25,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefsHelper {
   static const String _userIdKey = 'user_id';
+  static const String _authTokenKey = "auth_token";
 
   // Save User ID (Convert int to String)
   static Future<void> saveUserId(int userId) async {
@@ -43,5 +44,23 @@ class SharedPrefsHelper {
   static Future<void> clearUserId() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove(_userIdKey);
+  }
+
+  static Future<void> saveAuthToken(String token) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_authTokenKey, token.toString()); // Convert int to String
+  }
+
+  // Get User ID (Convert String to int)
+  static Future<String?> getAuthToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? tokenString = prefs.getString(_authTokenKey);
+    return tokenString != null ? tokenString : null; // Convert String to int
+  }
+
+  // Remove User ID
+  static Future<void> clearAuthToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_authTokenKey);
   }
 }

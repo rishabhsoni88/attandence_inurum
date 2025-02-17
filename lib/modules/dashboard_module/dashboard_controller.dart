@@ -52,33 +52,33 @@ class DashBoardController extends GetxController {
       }
     });
   }
-Future<void> getUserDetails() async {
-  showLoader.value = true;
-  var apiClient = ApiClient();
-  int? userId = await SharedPrefsHelper.getUserId();
-  await apiClient.userData(userId).then((value) {
-    if (value.status == true) {
-      print("User Details : ${value.data}");
-      userDetails.value = value;
+
+  Future<void> getUserDetails() async {
+    showLoader.value = true;
+    var apiClient = ApiClient();
+    int? userId = await SharedPrefsHelper.getUserId();
+    await apiClient.userData(userId).then((value) {
+      if (value.status == true) {
+        print("User Details : ${value.data}");
+        userDetails.value = value;
+        showLoader.value = false;
+      } else {
+        print("Api Response Error: $value");
+        showLoader.value = false;
+        showSnackbar('OOPS', value.message ?? '');
+      }
+    }).onError((error, stackTrace) {
       showLoader.value = false;
-    } else {
-      print("Api Response Error: $value");
-      showLoader.value = false;
-      showSnackbar('OOPS', value.message ?? '');
-    }
-  }).onError((error, stackTrace) {
-    showLoader.value = false;
-    print("Api Error: $error");
-    if (error is DioException) {
-      if (error.response?.statusCode == 401) {
-        SessionExpiredDialog.show(Get.context!);
+      print("Api Error: $error");
+      if (error is DioException) {
+        if (error.response?.statusCode == 401) {
+          SessionExpiredDialog.show(Get.context!);
+        } else {
+          showSnackbar("OOPS", error.toString());
+        }
       } else {
         showSnackbar("OOPS", error.toString());
       }
-    } else {
-      showSnackbar("OOPS", error.toString());
-    }
-  });
-}
-
+    });
+  }
 }

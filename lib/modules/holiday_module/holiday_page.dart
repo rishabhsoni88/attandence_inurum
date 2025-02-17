@@ -37,8 +37,6 @@ class HolidayPage extends GetView<HolidayController> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 8.0, horizontal: 15),
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                       decoration: BoxDecoration(
                           color: scaffoldColor,
                           borderRadius: BorderRadius.circular(10),
@@ -46,52 +44,64 @@ class HolidayPage extends GetView<HolidayController> {
                             BoxShadow(color: boxShadowColor, blurRadius: 5)
                           ]),
                       child: Column(
-                        spacing: MediaQuery.of(context).size.height / 95,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                spacing:
-                                    MediaQuery.of(context).size.height / 75,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Icon(
-                                    Icons.calendar_month,
-                                    size:
-                                        MediaQuery.of(context).size.height / 35,
-                                    color: cardDescriptionTextColor,
-                                  ),
-                                  Text(controller.holidayList[index].date.toCustomDate(),
-                                      style: smallTextRegular.copyWith(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .height /
-                                              55,
-                                          color: cardDescriptionTextColor)),
-                                ],
-                              ),
-                              Text("Thursday",
-                                  style: smallTextRegular.copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize:
-                                          MediaQuery.of(context).size.height /
-                                              65,
-                                      color: boxShadowColor)),
-                            ],
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                gradient: holidayCard,
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10))),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  spacing:
+                                      MediaQuery.of(context).size.height / 75,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      decoration: BoxDecoration(
+                                          color: scaffoldColor,
+                                        borderRadius: BorderRadius.all(Radius.circular(10))
+                                      ),
+                                      child: Image.asset(
+                                        "assets/images/calenderIcon.png",
+                                        height: 25,
+                                        width: 25,
+                                      ),
+                                    ),
+                                    Text(
+                                        controller.holidayList[index].date
+                                            .toCustomDate(),
+                                        style: smallTextRegular.copyWith(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 15,
+                                            color: scaffoldColor)),
+                                  ],
+                                ),
+                                Text("Thursday",
+                                    style: smallTextRegular.copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
+                                        color: boxShadowColor)),
+                              ],
+                            ),
                           ),
-                          Text(controller.holidayList[index].holidayName ??
-                              notAvailable,style: largeTextBold.copyWith(
-                              fontWeight: FontWeight.w600,
-                              fontSize: MediaQuery.of(context)
-                                  .size
-                                  .height /
-                                  45,
-                              color: cardDescriptionTextColor)),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                                controller.holidayList[index].holidayName ??
+                                    notAvailable,
+                                style: largeTextBold.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 20,
+                                    color: Colors.black)),
+                          ),
                           // Text(controller.holidayList[index].date ??
                           //     notAvailable),
                         ],

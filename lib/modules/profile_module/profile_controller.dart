@@ -27,6 +27,7 @@ class ProfileController extends GetxController {
       if (value.status == true) {
         print("User Details : ${value.data}");
         userDetails.value = value;
+        print(value.data?.userProfileImg);
         showLoader.value = false;
       } else {
         print("Api Response Error: $value");
